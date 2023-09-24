@@ -1,10 +1,10 @@
 import React from 'react'
-import {Link,NavLink} from 'react-router-dom'
+import {Link,NavLink,useNavigate} from 'react-router-dom'
 import { useCart } from './CartsContext'
 
 const Header = () => {
   const {cart} = useCart();
-
+  const navigate = useNavigate()
   const {toggleName} = useCart();
   const {setToggleName} = useCart()
 
@@ -40,7 +40,10 @@ const Header = () => {
 
                 <li>
                     <button onClick={
-                      () => {setToggleName("")}
+                      () => {
+                        setToggleName("")
+                        navigate("/")
+                            }
                     } className='p-2 bg-blue-600 text-white rounded text-sm'>
                       Logout
                     </button>
