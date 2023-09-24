@@ -1,0 +1,8 @@
+@tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind variants;
+*
+{
+    box-sizing: border-box;
+}
